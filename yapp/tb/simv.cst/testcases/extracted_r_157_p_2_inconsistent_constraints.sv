@@ -1,0 +1,26 @@
+class c_157_2;
+    int i = 19;
+    rand bit[5:0] length; // rand_mode = ON 
+
+    constraint length2_this    // (constraint_mode = ON) (../sv/yapp_packet.sv:78)
+    {
+       (length < 6'hf);
+    }
+    constraint WITH_CONSTRAINT_this    // (constraint_mode = ON) (yapp_tx_seqs.sv:124)
+    {
+       (length == i);
+    }
+endclass
+
+program p_157_2;
+    c_157_2 obj;
+    string randState;
+
+    initial
+        begin
+            obj = new;
+            randState = "z1x1z0z011x0zzz0zx001x01x010zzx1xxxxxxzzzzxzzxzzxxxzxzzzzxzxzzzz";
+            obj.set_randstate(randState);
+            obj.randomize();
+        end
+endprogram
