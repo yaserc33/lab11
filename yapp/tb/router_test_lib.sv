@@ -108,7 +108,7 @@ endclass : simple_test
 class test_uvc_integration extends base_test;
 
   `uvm_component_utils(test_uvc_integration)
-  function new(string name ="simple_test" , uvm_component parent);
+  function new(string name ="test_uvc_integration" , uvm_component parent);
 super.new(name,parent);
 
   endfunction:new
